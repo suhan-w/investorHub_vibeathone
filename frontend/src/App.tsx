@@ -1,167 +1,99 @@
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import "./App.css";
 
-interface Mover {
+interface Move {
   ticker: string;
   name: string;
-  pct_change: number;
+  exchange: string;
+  close?: number;
+  prev_close?: number;
+  change?: number;
+  pct_change?: number;
+  volume?: number;
+  avg_volume?: number;
+  unusual_volume?: boolean;
+  as_of?: string;
+  headline?: string | null;
+  error?: string;
 }
 
-interface MarketSession {
-  headline: string;
-  bullets: string[];
-  movers: Mover[];
-}
+const API_BASE = "http://localhost:8000/api";
 
-interface OceaniaEvent {
-  time: string;
-  title: string;
-  detail: string;
-}
-
-interface Briefing {
-  date: string;
-  sessions: {
-    new_york: MarketSession;
-    london: MarketSession;
-    oceania: { headline: string; events: OceaniaEvent[] };
-  };
-  script: string;
-  audio_url: string | null;
-  generated_at: string;
-}
-
-function formatDate(iso: string) {
-  return new Date(iso + "T00:00:00").toLocaleDateString("en-AU", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  });
-}
-
-function formatTime(seconds: number) {
-  if (!Number.isFinite(seconds)) return "0:00";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
+function formatPrice(exchange: string, value: number) {
+  const prefix = exchange === "LSE" ? "£" : "$";
+  return `${prefix}${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
 function formatPct(value: number) {
-  return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${value.toFixed(2)}%`;
 }
 
-function Player({ briefing }: { briefing: Briefing }) {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const [current, setCurrent] = useState(0);
-  const [duration, setDuration] = useState(0);
-
-  // Lock screen and notification controls while the briefing plays
-  useEffect(() => {
-    if (!("mediaSession" in navigator)) return;
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: `Market briefing, ${formatDate(briefing.date)}`,
-      artist: "Before the Bell",
-      artwork: [{ src: "/favicon.svg", sizes: "any", type: "image/svg+xml" }],
-    });
-    navigator.mediaSession.setActionHandler("play", () => audioRef.current?.play());
-    navigator.mediaSession.setActionHandler("pause", () => audioRef.current?.pause());
-  }, [briefing.date]);
-
-  if (!briefing.audio_url) {
-    return (
-      <div className="player player-empty">
-        Audio for today's briefing is still being generated.
-      </div>
-    );
-  }
-
-  const toggle = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (audio.paused) audio.play();
-    else audio.pause();
-  };
-
-  const seek = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (audioRef.current) audioRef.current.currentTime = Number(e.target.value);
-  };
-
+function WatchlistRow({ move, onRemove, removing }: { move: Move; onRemove: (ticker: string) => void; removing: boolean }) {
   return (
-    <div className="player">
-      <audio
-        ref={audioRef}
-        src={briefing.audio_url}
-        preload="metadata"
-        onPlay={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
-        onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
-        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-      />
+    <div className="table-row">
+      <span className="cell-ticker">
+        <span className="ticker">{move.ticker}</span>
+        <span className="name">{move.name}</span>
+      </span>
+
+      {move.error ? (
+        <span className="cell-error" style={{ gridColumn: "2 / span 2" }}>
+          No data available
+        </span>
+      ) : (
+        <>
+          <span className="cell-num">{formatPrice(move.exchange, move.close!)}</span>
+          <span className={`cell-num delta ${move.change! >= 0 ? "up" : "down"}`}>
+            {formatPct(move.pct_change!)}
+            {move.unusual_volume && <span className="badge">unusual vol</span>}
+          </span>
+        </>
+      )}
+
+      <span className="cell-headline" title={move.headline ?? undefined}>
+        {move.headline ?? "—"}
+      </span>
+
       <button
-        className="play-button"
-        onClick={toggle}
-        aria-label={playing ? "Pause briefing" : "Play briefing"}
+        className="remove-btn"
+        onClick={() => onRemove(move.ticker)}
+        disabled={removing}
+        aria-label={`Remove ${move.ticker}`}
+        title={`Remove ${move.ticker}`}
       >
-        {playing ? (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="6" y="5" width="4" height="14" rx="1" />
-            <rect x="14" y="5" width="4" height="14" rx="1" />
-          </svg>
-        ) : (
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z" />
-          </svg>
-        )}
+        ×
       </button>
-      <div className="player-body">
-        <div className="player-label">
-          {playing ? "Playing briefing" : "Listen to the briefing"}
-        </div>
-        <input
-          className="scrubber"
-          type="range"
-          min={0}
-          max={duration || 0}
-          step={0.1}
-          value={current}
-          onChange={seek}
-          aria-label="Seek"
-        />
-        <div className="player-times">
-          <span>{formatTime(current)}</span>
-          <span>{formatTime(duration)}</span>
-        </div>
-      </div>
-      <a className="download" href={briefing.audio_url} download={`briefing-${briefing.date}.mp3`}>
-        Download
-      </a>
     </div>
   );
 }
 
-function SessionCard({ title, closed, session }: { title: string; closed: string; session: MarketSession }) {
+function ExchangeSection({
+  title,
+  moves,
+  onRemove,
+  removingTicker,
+}: {
+  title: string;
+  moves: Move[];
+  onRemove: (ticker: string) => void;
+  removingTicker: string | null;
+}) {
+  if (moves.length === 0) return null;
+
   return (
-    <section className="card">
-      <header className="card-header">
-        <h2>{title}</h2>
-        <span className="card-meta">{closed}</span>
-      </header>
-      <p className="card-headline">{session.headline}</p>
-      <ul className="bullets">
-        {session.bullets.map((b) => (
-          <li key={b}>{b}</li>
-        ))}
-      </ul>
-      <div className="movers">
-        {session.movers.map((m) => (
-          <div className="mover" key={m.ticker}>
-            <span className="mover-name">{m.name}</span>
-            <span className={`mover-pct ${m.pct_change >= 0 ? "up" : "down"}`}>
-              {formatPct(m.pct_change)}
-            </span>
-          </div>
+    <section className="section">
+      <h2 className="section-title">{title}</h2>
+      <div className="table">
+        <div className="table-header">
+          <span>Ticker</span>
+          <span>Close</span>
+          <span>Change</span>
+          <span>Headline</span>
+          <span aria-hidden="true" />
+        </div>
+        {moves.map((m) => (
+          <WatchlistRow key={m.ticker} move={m} onRemove={onRemove} removing={removingTicker === m.ticker} />
         ))}
       </div>
     </section>
@@ -169,84 +101,132 @@ function SessionCard({ title, closed, session }: { title: string; closed: string
 }
 
 function App() {
-  const [briefing, setBriefing] = useState<Briefing | null>(null);
+  const [moves, setMoves] = useState<Move[] | null>(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showScript, setShowScript] = useState(false);
 
-  useEffect(() => {
-    fetch(`/briefing.json?t=${Date.now()}`)
+  const [newTicker, setNewTicker] = useState("");
+  const [addError, setAddError] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
+  const [removingTicker, setRemovingTicker] = useState<string | null>(null);
+
+  const [briefingStatus, setBriefingStatus] = useState<string | null>(null);
+  const [generatingBriefing, setGeneratingBriefing] = useState(false);
+
+  const loadWatchlist = () => {
+    setLoading(true);
+    setError(null);
+    return fetch(`${API_BASE}/watchlist`)
       .then((res) => {
         if (!res.ok) throw new Error(`Request failed: ${res.status}`);
         return res.json();
       })
-      .then(setBriefing)
-      .catch((err) => setError(err.message));
+      .then(setMoves)
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    loadWatchlist();
   }, []);
 
-  if (error) {
-    return (
-      <div className="page">
-        <p className="state">Today's briefing isn't available yet. Pull down to refresh.</p>
-      </div>
-    );
-  }
+  const handleAdd = async (e: FormEvent) => {
+    e.preventDefault();
+    const ticker = newTicker.trim().toUpperCase();
+    if (!ticker) return;
 
-  if (!briefing) {
-    return (
-      <div className="page">
-        <p className="state">Loading today's briefing…</p>
-      </div>
-    );
-  }
+    setAdding(true);
+    setAddError(null);
+    try {
+      const res = await fetch(`${API_BASE}/watchlist`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ticker }),
+      });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.detail ?? `Couldn't add ${ticker}`);
+      setMoves(body);
+      setNewTicker("");
+    } catch (err) {
+      setAddError(err instanceof Error ? err.message : "Couldn't add ticker");
+    } finally {
+      setAdding(false);
+    }
+  };
 
-  const { new_york, london, oceania } = briefing.sessions;
+  const handleRemove = async (ticker: string) => {
+    setRemovingTicker(ticker);
+    try {
+      const res = await fetch(`${API_BASE}/watchlist/${ticker}`, { method: "DELETE" });
+      if (!res.ok) throw new Error(`Couldn't remove ${ticker}`);
+      setMoves(await res.json());
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Couldn't remove ticker");
+    } finally {
+      setRemovingTicker(null);
+    }
+  };
+
+  const handleGenerateBriefing = async () => {
+    setGeneratingBriefing(true);
+    setBriefingStatus(null);
+    try {
+      const res = await fetch(`${API_BASE}/briefing`, { method: "POST" });
+      const body = await res.json();
+      setBriefingStatus(body.message ?? "Briefing requested.");
+    } catch {
+      setBriefingStatus("Couldn't reach the backend to generate a briefing.");
+    } finally {
+      setGeneratingBriefing(false);
+    }
+  };
+
+  const nyse = moves?.filter((m) => m.exchange === "NYSE") ?? [];
+  const lse = moves?.filter((m) => m.exchange === "LSE") ?? [];
+  const other = moves?.filter((m) => m.exchange !== "NYSE" && m.exchange !== "LSE") ?? [];
+  const asOf = moves?.find((m) => m.as_of)?.as_of;
 
   return (
     <div className="page">
-      <header className="masthead">
-        <div className="brand">Before the Bell</div>
-        <h1>{formatDate(briefing.date)}</h1>
-        <p className="subtitle">Overnight markets in three minutes, ready for the ASX open.</p>
+      <header className="page-header">
+        <div>
+          <h1>Overnight Briefing</h1>
+          <p className="subtitle">
+            {asOf ? `Latest close as of ${asOf}` : "Your watchlist, summarized before the open"}
+          </p>
+        </div>
+        <button className="primary-btn" onClick={handleGenerateBriefing} disabled={generatingBriefing || loading}>
+          {generatingBriefing ? "Generating…" : "Generate briefing"}
+        </button>
       </header>
 
-      <Player briefing={briefing} />
+      {briefingStatus && <p className="info-banner">{briefingStatus}</p>}
 
-      <section className="card card-oceania">
-        <header className="card-header">
-          <h2>Oceania ahead</h2>
-          <span className="card-meta">ASX opens 10:00 AEST</span>
-        </header>
-        <p className="card-headline">{oceania.headline}</p>
-        <ol className="events">
-          {oceania.events.map((e) => (
-            <li key={e.title}>
-              <span className="event-time">{e.time}</span>
-              <div>
-                <div className="event-title">{e.title}</div>
-                <div className="event-detail">{e.detail}</div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <form className="add-form" onSubmit={handleAdd}>
+        <input
+          type="text"
+          placeholder="Add a ticker (e.g. GOOGL, BARC.L)"
+          value={newTicker}
+          onChange={(e) => setNewTicker(e.target.value)}
+          disabled={adding}
+        />
+        <button type="submit" disabled={adding || !newTicker.trim()}>
+          {adding ? "Adding…" : "Add"}
+        </button>
+      </form>
+      {addError && <p className="error-text">{addError}</p>}
 
-      <SessionCard title="New York" closed="Closed 06:00 AEST" session={new_york} />
-      <SessionCard title="London" closed="Closed 01:30 AEST" session={london} />
+      {error && <p className="error-banner">Couldn't reach the backend: {error}</p>}
+      {loading && <p className="loading">Loading watchlist…</p>}
 
-      <button className="script-toggle" onClick={() => setShowScript((s) => !s)}>
-        {showScript ? "Hide transcript" : "Read the transcript"}
-      </button>
-      {showScript && <div className="script">{briefing.script}</div>}
-
-      <footer className="disclaimer">
-        AI-generated summary of public market information. General information only, not
-        financial advice. Generated{" "}
-        {new Date(briefing.generated_at).toLocaleTimeString("en-AU", {
-          hour: "numeric",
-          minute: "2-digit",
-        })}
-        .
-      </footer>
+      {!loading && moves && (
+        <main>
+          <ExchangeSection title="NYSE" moves={nyse} onRemove={handleRemove} removingTicker={removingTicker} />
+          <ExchangeSection title="LSE" moves={lse} onRemove={handleRemove} removingTicker={removingTicker} />
+          <ExchangeSection title="Other" moves={other} onRemove={handleRemove} removingTicker={removingTicker} />
+          {moves.length === 0 && <p className="empty-state">Your watchlist is empty — add a ticker above.</p>}
+        </main>
+      )}
     </div>
   );
 }
