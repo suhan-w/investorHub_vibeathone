@@ -1,17 +1,32 @@
-"""Pulls the latest overnight move per ticker in the watchlist via yfinance.
+"""Pulls the latest overnight move + a headline per ticker in the watchlist.
 
 Standalone and testable on its own: `python fetch_moves.py` prints the JSON.
 """
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 
 import yfinance as yf
 
-from watchlist import WATCHLIST
+from watchlist_store import load_watchlist
+
+
+def _fetch_headline(ticker: str) -> str | None:
+    try:
+        news = yf.Ticker(ticker).news
+        for item in news or []:
+            title = item.get("content", {}).get("title")
+            if title:
+                return title
+    except Exception:
+        pass
+    return None
 
 
 def fetch_moves() -> list[dict]:
-    tickers = [item["ticker"] for item in WATCHLIST]
+    watchlist = load_watchlist()
+    tickers = [item["ticker"] for item in watchlist]
+
     data = yf.download(
         tickers,
         period="2mo",
@@ -21,8 +36,11 @@ def fetch_moves() -> list[dict]:
         progress=False,
     )
 
+    with ThreadPoolExecutor(max_workers=len(tickers) or 1) as pool:
+        headlines = dict(zip(tickers, pool.map(_fetch_headline, tickers)))
+
     moves = []
-    for item in WATCHLIST:
+    for item in watchlist:
         ticker = item["ticker"]
         try:
             hist = data[ticker].dropna()
@@ -56,6 +74,7 @@ def fetch_moves() -> list[dict]:
                 "avg_volume": int(avg_volume),
                 "unusual_volume": unusual_volume,
                 "as_of": str(hist.index[-1].date()),
+                "headline": headlines.get(ticker),
             }
         )
 
