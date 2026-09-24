@@ -1,6 +1,6 @@
 """Persists the user's watchlist membership to a local JSON file.
 
-Seeded with a 5 NYSE + 5 LSE demo set; add_ticker/remove_ticker let the
+Seeded with a 10 NYSE + 10 LSE demo set; add_ticker/remove_ticker let the
 dashboard manage membership without touching the data-fetch layer.
 """
 
@@ -22,6 +22,16 @@ DEFAULT_WATCHLIST = [
     {"ticker": "AZN.L", "name": "AstraZeneca", "exchange": "LSE"},
     {"ticker": "ULVR.L", "name": "Unilever", "exchange": "LSE"},
     {"ticker": "VOD.L", "name": "Vodafone", "exchange": "LSE"},
+    {"ticker": "AMZN", "name": "Amazon", "exchange": "NYSE"},
+    {"ticker": "GOOGL", "name": "Alphabet", "exchange": "NYSE"},
+    {"ticker": "META", "name": "Meta", "exchange": "NYSE"},
+    {"ticker": "AMD", "name": "AMD", "exchange": "NYSE"},
+    {"ticker": "XOM", "name": "ExxonMobil", "exchange": "NYSE"},
+    {"ticker": "SHEL.L", "name": "Shell", "exchange": "LSE"},
+    {"ticker": "RIO.L", "name": "Rio Tinto", "exchange": "LSE"},
+    {"ticker": "GSK.L", "name": "GSK", "exchange": "LSE"},
+    {"ticker": "BARC.L", "name": "Barclays", "exchange": "LSE"},
+    {"ticker": "LLOY.L", "name": "Lloyds", "exchange": "LSE"},
 ]
 
 
