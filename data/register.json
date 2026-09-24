@@ -1,0 +1,402 @@
+[
+  {
+    "id": "h-10",
+    "name": "Stonecrop Partners",
+    "type": "institution",
+    "holdingPercent": 6.06,
+    "change30dPercent": 0.4,
+    "dateJoined": "2025-10-18"
+  },
+  {
+    "id": "h-5",
+    "name": "Coolibah Superannuation Fund",
+    "type": "institution",
+    "holdingPercent": 6.01,
+    "change30dPercent": 3.2,
+    "dateJoined": "2025-09-18"
+  },
+  {
+    "id": "h-3",
+    "name": "Blackfen Investment Group",
+    "type": "institution",
+    "holdingPercent": 5.35,
+    "change30dPercent": 6.6,
+    "dateJoined": "2025-11-24"
+  },
+  {
+    "id": "h-1",
+    "name": "Karst Peak Capital",
+    "type": "institution",
+    "holdingPercent": 4.34,
+    "change30dPercent": -0.5,
+    "dateJoined": "2025-10-25"
+  },
+  {
+    "id": "h-2",
+    "name": "Southern Cross Asset Management",
+    "type": "institution",
+    "holdingPercent": 4.23,
+    "change30dPercent": -3.5,
+    "dateJoined": "2024-11-16"
+  },
+  {
+    "id": "h-7",
+    "name": "Everview Asset Management",
+    "type": "institution",
+    "holdingPercent": 2.84,
+    "change30dPercent": -4,
+    "dateJoined": "2024-09-03"
+  },
+  {
+    "id": "h-8",
+    "name": "Wattle Grove Investments",
+    "type": "institution",
+    "holdingPercent": 2.81,
+    "change30dPercent": 4,
+    "dateJoined": "2024-03-01"
+  },
+  {
+    "id": "h-9",
+    "name": "Torrington Capital",
+    "type": "institution",
+    "holdingPercent": 2.7,
+    "change30dPercent": 5.9,
+    "dateJoined": "2025-05-11"
+  },
+  {
+    "id": "h-4",
+    "name": "Argent Ridge Partners",
+    "type": "institution",
+    "holdingPercent": 2.11,
+    "change30dPercent": 0.5,
+    "dateJoined": "2024-01-13"
+  },
+  {
+    "id": "h-6",
+    "name": "Northwind Capital Partners",
+    "type": "institution",
+    "holdingPercent": 1.95,
+    "change30dPercent": 5.6,
+    "dateJoined": "2025-04-05"
+  },
+  {
+    "id": "h-20",
+    "name": "Olivia Kowalski",
+    "type": "HNW",
+    "holdingPercent": 1.656,
+    "change30dPercent": -10.8,
+    "dateJoined": "2024-08-03"
+  },
+  {
+    "id": "h-23",
+    "name": "Alexander Carmichael",
+    "type": "HNW",
+    "holdingPercent": 1.607,
+    "change30dPercent": -6.6,
+    "dateJoined": "2025-02-24"
+  },
+  {
+    "id": "h-13",
+    "name": "Noah Kowalski",
+    "type": "HNW",
+    "holdingPercent": 1.493,
+    "change30dPercent": 1.2,
+    "dateJoined": "2025-02-19"
+  },
+  {
+    "id": "h-19",
+    "name": "Lily Okafor",
+    "type": "HNW",
+    "holdingPercent": 1.226,
+    "change30dPercent": 1,
+    "dateJoined": "2025-10-17"
+  },
+  {
+    "id": "h-21",
+    "name": "Hannah Okafor",
+    "type": "HNW",
+    "holdingPercent": 1.226,
+    "change30dPercent": 4,
+    "dateJoined": "2025-07-06"
+  },
+  {
+    "id": "h-18",
+    "name": "Emily Beaumont",
+    "type": "HNW",
+    "holdingPercent": 1.223,
+    "change30dPercent": -0.2,
+    "dateJoined": "2024-11-17"
+  },
+  {
+    "id": "h-17",
+    "name": "Grace Carmichael",
+    "type": "HNW",
+    "holdingPercent": 1.206,
+    "change30dPercent": 10,
+    "dateJoined": "2025-01-24"
+  },
+  {
+    "id": "h-22",
+    "name": "Amelia Kowalski",
+    "type": "HNW",
+    "holdingPercent": 1.119,
+    "change30dPercent": 6.6,
+    "dateJoined": "2025-09-25"
+  },
+  {
+    "id": "h-14",
+    "name": "Charlotte Everett",
+    "type": "HNW",
+    "holdingPercent": 1.033,
+    "change30dPercent": 10.3,
+    "dateJoined": "2024-07-20"
+  },
+  {
+    "id": "h-12",
+    "name": "Daniel Larsen",
+    "type": "HNW",
+    "holdingPercent": 0.846,
+    "change30dPercent": -9.2,
+    "dateJoined": "2024-06-20"
+  },
+  {
+    "id": "h-16",
+    "name": "Ethan Petrov",
+    "type": "HNW",
+    "holdingPercent": 0.667,
+    "change30dPercent": 5.3,
+    "dateJoined": "2024-03-13"
+  },
+  {
+    "id": "h-15",
+    "name": "Alexander Nguyen",
+    "type": "HNW",
+    "holdingPercent": 0.393,
+    "change30dPercent": 4,
+    "dateJoined": "2024-05-06"
+  },
+  {
+    "id": "h-11",
+    "name": "Thomas Whitfield",
+    "type": "HNW",
+    "holdingPercent": 0.363,
+    "change30dPercent": -10.9,
+    "dateJoined": "2024-07-05"
+  },
+  {
+    "id": "h-24",
+    "name": "Mia Okafor",
+    "type": "HNW",
+    "holdingPercent": 0.337,
+    "change30dPercent": -3,
+    "dateJoined": "2025-12-09"
+  },
+  {
+    "id": "h-30",
+    "name": "Max Nguyen",
+    "type": "retail",
+    "holdingPercent": 0.284,
+    "change30dPercent": -1.8,
+    "dateJoined": "2025-08-10"
+  },
+  {
+    "id": "h-33",
+    "name": "Zoe Pham",
+    "type": "retail",
+    "holdingPercent": 0.283,
+    "change30dPercent": 2.8,
+    "dateJoined": "2025-02-02"
+  },
+  {
+    "id": "h-26",
+    "name": "Ella Sato",
+    "type": "retail",
+    "holdingPercent": 0.263,
+    "change30dPercent": -6.1,
+    "dateJoined": "2024-04-07"
+  },
+  {
+    "id": "h-35",
+    "name": "Emily Sato",
+    "type": "retail",
+    "holdingPercent": 0.257,
+    "change30dPercent": -11.6,
+    "dateJoined": "2024-12-22"
+  },
+  {
+    "id": "h-44",
+    "name": "Thomas Osei",
+    "type": "retail",
+    "holdingPercent": 0.248,
+    "change30dPercent": -1.3,
+    "dateJoined": "2024-06-03"
+  },
+  {
+    "id": "h-46",
+    "name": "Liam Petrov",
+    "type": "retail",
+    "holdingPercent": 0.246,
+    "change30dPercent": -11.9,
+    "dateJoined": "2024-12-12"
+  },
+  {
+    "id": "h-47",
+    "name": "Emily Sundqvist",
+    "type": "retail",
+    "holdingPercent": 0.221,
+    "change30dPercent": 10.7,
+    "dateJoined": "2024-11-23"
+  },
+  {
+    "id": "h-32",
+    "name": "Isla Petrov",
+    "type": "retail",
+    "holdingPercent": 0.219,
+    "change30dPercent": -2,
+    "dateJoined": "2025-10-24"
+  },
+  {
+    "id": "h-37",
+    "name": "Ella Hargreaves",
+    "type": "retail",
+    "holdingPercent": 0.2,
+    "change30dPercent": 10.9,
+    "dateJoined": "2025-02-12"
+  },
+  {
+    "id": "h-48",
+    "name": "Daniel Osei",
+    "type": "retail",
+    "holdingPercent": 0.19,
+    "change30dPercent": 3.9,
+    "dateJoined": "2025-10-23"
+  },
+  {
+    "id": "h-28",
+    "name": "Ethan Hargreaves",
+    "type": "retail",
+    "holdingPercent": 0.176,
+    "change30dPercent": 16.6,
+    "dateJoined": "2024-09-04"
+  },
+  {
+    "id": "h-36",
+    "name": "Henry Novak",
+    "type": "retail",
+    "holdingPercent": 0.141,
+    "change30dPercent": 1.7,
+    "dateJoined": "2024-01-18"
+  },
+  {
+    "id": "h-42",
+    "name": "Emily Fitzgerald",
+    "type": "retail",
+    "holdingPercent": 0.129,
+    "change30dPercent": 3.2,
+    "dateJoined": "2024-03-26"
+  },
+  {
+    "id": "h-25",
+    "name": "Jack Bianchi",
+    "type": "retail",
+    "holdingPercent": 0.126,
+    "change30dPercent": -2.7,
+    "dateJoined": "2024-05-08"
+  },
+  {
+    "id": "h-34",
+    "name": "Isla Bianchi",
+    "type": "retail",
+    "holdingPercent": 0.118,
+    "change30dPercent": -9.7,
+    "dateJoined": "2025-06-24"
+  },
+  {
+    "id": "h-39",
+    "name": "Samuel Nguyen",
+    "type": "retail",
+    "holdingPercent": 0.112,
+    "change30dPercent": -2.5,
+    "dateJoined": "2025-12-27"
+  },
+  {
+    "id": "h-38",
+    "name": "Chloe Novak",
+    "type": "retail",
+    "holdingPercent": 0.093,
+    "change30dPercent": -9.5,
+    "dateJoined": "2025-12-23"
+  },
+  {
+    "id": "h-43",
+    "name": "Henry Sundqvist",
+    "type": "retail",
+    "holdingPercent": 0.09,
+    "change30dPercent": 16.1,
+    "dateJoined": "2025-09-17"
+  },
+  {
+    "id": "h-27",
+    "name": "Emily Petrov",
+    "type": "retail",
+    "holdingPercent": 0.08,
+    "change30dPercent": 17,
+    "dateJoined": "2024-05-24"
+  },
+  {
+    "id": "h-40",
+    "name": "Samuel Bianchi",
+    "type": "retail",
+    "holdingPercent": 0.079,
+    "change30dPercent": -1.8,
+    "dateJoined": "2024-08-20"
+  },
+  {
+    "id": "h-49",
+    "name": "Lucas Okafor",
+    "type": "retail",
+    "holdingPercent": 0.061,
+    "change30dPercent": -3.8,
+    "dateJoined": "2024-12-26"
+  },
+  {
+    "id": "h-45",
+    "name": "Grace Sundqvist",
+    "type": "retail",
+    "holdingPercent": 0.052,
+    "change30dPercent": -6.4,
+    "dateJoined": "2024-04-07"
+  },
+  {
+    "id": "h-31",
+    "name": "Jack Marchetti",
+    "type": "retail",
+    "holdingPercent": 0.046,
+    "change30dPercent": 15.8,
+    "dateJoined": "2025-01-16"
+  },
+  {
+    "id": "h-41",
+    "name": "Lily Hargreaves",
+    "type": "retail",
+    "holdingPercent": 0.024,
+    "change30dPercent": 15,
+    "dateJoined": "2025-04-27"
+  },
+  {
+    "id": "h-50",
+    "name": "Amelia Osei",
+    "type": "retail",
+    "holdingPercent": 0.017,
+    "change30dPercent": 1.8,
+    "dateJoined": "2024-09-23"
+  },
+  {
+    "id": "h-29",
+    "name": "Sophie Fitzgerald",
+    "type": "retail",
+    "holdingPercent": 0.015,
+    "change30dPercent": 12.5,
+    "dateJoined": "2024-03-23"
+  }
+]
