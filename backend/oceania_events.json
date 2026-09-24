@@ -1,0 +1,9 @@
+{
+  "headline": "ASX set to open with a cautious lead from offshore",
+  "events": [
+    { "time": "10:00 AEST", "title": "ASX 200 opens", "detail": "Local futures point to a flat to slightly positive start." },
+    { "time": "11:30 AEST", "title": "Australian job vacancies data", "detail": "Quarterly ABS release, watched for signs of a cooling labour market." },
+    { "time": "All day", "title": "Miners in focus", "detail": "Iron ore and copper moves overnight will set the tone for BHP, Rio Tinto and Fortescue." },
+    { "time": "08:45 NZST", "title": "NZ trade balance", "detail": "Monthly Stats NZ release before the NZX opens." }
+  ]
+}
