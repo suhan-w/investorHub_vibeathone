@@ -20,7 +20,7 @@ for _p in (_THIS_DIR, _BACKEND_DIR):
 import yfinance as yf  # noqa: E402
 
 from fetch_moves import fetch_moves  # noqa: E402
-from watchlist import WATCHLIST  # noqa: E402
+from watchlist_store import load_watchlist  # noqa: E402
 from summarizer import summarize_ticker, _fallback_summary  # noqa: E402
 
 CACHE_FILE = os.path.join(_THIS_DIR, ".data_layer_cache.json")
@@ -152,7 +152,7 @@ def get_all_ticker_data(force_refresh: bool = False, skip_summary: bool = False)
         moves = fetch_moves()
     except Exception as exc:
         print(f"[data_layer] fetch_moves() failed entirely: {exc}", file=sys.stderr)
-        moves = [{**item, "error": str(exc)} for item in WATCHLIST]
+        moves = [{**item, "error": str(exc)} for item in load_watchlist()]
 
     records = []
     for move in moves:
