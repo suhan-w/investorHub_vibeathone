@@ -11,10 +11,50 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "scrapper"))
 
-from data_layer import get_all_ticker_data  # noqa: E402
+import json  # noqa: E402
+
+import yfinance as yf  # noqa: E402
+
+from data_layer import CACHE_FILE, get_all_ticker_data  # noqa: E402
 from watchlist_store import load_watchlist  # noqa: E402
 
 SESSIONS = {"new_york": ("NYSE", "NASDAQ"), "london": ("LSE",)}
+INDEXES = {
+    "new_york": [("^GSPC", "S&P 500"), ("^IXIC", "Nasdaq Composite")],
+    "london": [("^FTSE", "FTSE 100")],
+}
+
+
+def last_session(for_date: str) -> str:
+    """The overnight NY and London session before an Oceania morning."""
+    d = datetime.fromisoformat(for_date).date() - timedelta(days=1)
+    while d.weekday() >= 5:
+        d -= timedelta(days=1)
+    return d.isoformat()
+
+
+def index_moves(session: str) -> dict:
+    """Index % change for one session, from hourly bars.
+
+    Yahoo's daily index bars have gaps, so the last hourly close of each day is used.
+    """
+    end = datetime.fromisoformat(session).date() + timedelta(days=1)
+    start = end - timedelta(days=7)
+    out = {key: [] for key in INDEXES}
+    for key, indexes in INDEXES.items():
+        for symbol, name in indexes:
+            try:
+                bars = yf.download(symbol, start=start.isoformat(), end=end.isoformat(),
+                                   interval="1h", auto_adjust=False, progress=False)
+                close = bars["Close"].squeeze().dropna()
+                daily = close.groupby(close.index.date).last()
+                if str(daily.index[-1]) != session or len(daily) < 2:
+                    continue
+                pct = (daily.iloc[-1] / daily.iloc[-2] - 1) * 100
+                out[key].append({"name": name, "pct_change": round(float(pct), 1)})
+            except Exception as exc:
+                print(f"[scraper] index {symbol} failed: {exc}", file=sys.stderr)
+    return out
 
 
 def briefing_date() -> str:
@@ -29,9 +69,15 @@ def briefing_date() -> str:
     return d.isoformat()
 
 
-def get_market_data(for_date: str | None = None) -> dict:
+def get_market_data(for_date: str | None = None, cached: bool = False) -> dict:
     names = {w["ticker"]: w.get("name", w["ticker"]) for w in load_watchlist()}
-    records = get_all_ticker_data(force_refresh=True, skip_summary=True)
+    if cached:
+        # Reuse the last scrape, e.g. to rewrite the script after London has opened
+        records = json.loads(Path(CACHE_FILE).read_text())["data"]
+    else:
+        records = get_all_ticker_data(force_refresh=True, skip_summary=True)
+    for_date = for_date or briefing_date()
+    indexes = index_moves(last_session(for_date))
 
     sessions = {}
     for key, exchanges in SESSIONS.items():
@@ -52,6 +98,7 @@ def get_market_data(for_date: str | None = None) -> dict:
             )
         movers = sorted(stocks, key=lambda s: abs(s["pct_change"]), reverse=True)
         sessions[key] = {
+            "indexes": indexes[key],
             "stocks": stocks,
             "movers": [
                 {"ticker": s["ticker"], "name": s["name"], "pct_change": s["pct_change"]}
@@ -59,7 +106,7 @@ def get_market_data(for_date: str | None = None) -> dict:
             ],
         }
 
-    return {"date": for_date or briefing_date(), "sessions": sessions}
+    return {"date": for_date, "sessions": sessions}
 
 
 if __name__ == "__main__":

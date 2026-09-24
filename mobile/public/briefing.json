@@ -2,11 +2,21 @@
   "date": "2026-09-24",
   "sessions": {
     "new_york": {
-      "headline": "Tech watchlist slips as Alphabet and Amazon lead losses",
+      "headline": "Tech-led selling drags Wall Street lower",
       "bullets": [
-        "Alphabet fell 3.8% to about US$337.83, volume 1.4 times average.",
-        "Amazon dropped 2.24%; Nvidia and AMD each eased 1.47%.",
-        "ExxonMobil rose 1.85%; Meta added 1.02% on unusual 1.6x volume."
+        "S&P 500 down zero point seven percent, Nasdaq down one point one.",
+        "Alphabet fell three point eight percent, Amazon down two point two.",
+        "ExxonMobil and Meta bucked the trend with modest gains."
+      ],
+      "indexes": [
+        {
+          "name": "S&P 500",
+          "pct_change": -0.7
+        },
+        {
+          "name": "Nasdaq Composite",
+          "pct_change": -1.1
+        }
       ],
       "movers": [
         {
@@ -42,11 +52,17 @@
       ]
     },
     "london": {
-      "headline": "Energy names lead, banks and pharma drift lower",
+      "headline": "FTSE steady as energy majors climb",
       "bullets": [
-        "BP rose 2.86% to 557.8p; Shell gained 1.85% to 3575p.",
-        "AstraZeneca fell 1.52% to 12,480p despite EU asthma approval for Trixeo.",
-        "Vodafone down 1%, GSK down 0.79%, Barclays down 0.76%."
+        "FTSE 100 slipped about zero point one percent.",
+        "BP rose two point nine percent, Shell up one point nine.",
+        "AstraZeneca fell one point five percent; banks eased slightly."
+      ],
+      "indexes": [
+        {
+          "name": "FTSE 100",
+          "pct_change": -0.1
+        }
       ],
       "movers": [
         {
@@ -107,8 +123,8 @@
       ]
     }
   },
-  "script": "Good morning. Here is your market briefing for Thursday 24 September. New York leaned lower across our watchlist. Alphabet was the weakest, down three point eight percent to about three hundred and thirty eight dollars, on volume around one point four times average. DeepMind's chief said Gemini four is coming much earlier. Amazon fell two point two four percent to roughly two hundred and forty nine dollars. Nvidia and AMD both eased about one point five percent, Nvidia near two hundred and twenty six dollars and AMD about six hundred and fifteen dollars. Apple slipped zero point eight percent, and JPMorgan Chase was down zero point seven percent. On the other side, ExxonMobil rose one point eight five percent to roughly one hundred and sixty one dollars. Meta gained one percent to about seven hundred and forty four dollars, with trading one point six times average, unusually heavy. Mark Zuckerberg said the Muse artificial intelligence agent will take a small fee from transactions. Microsoft added half a percent and Tesla was slightly higher. Across to London, where energy names led. BP climbed two point nine percent to about five hundred and fifty eight pence. Shell rose one point eight five percent to roughly three thousand five hundred and seventy five pence, after completing an eight hundred and forty million dollar Gulf oil asset sale. HSBC edged up zero point seven percent, as the bank targets younger workers with an entry level hiring drive. Elsewhere the tone was softer. AstraZeneca fell one point five percent to around twelve thousand four hundred and eighty pence, although its Trixeo treatment secured approval for asthma in the European Union. Vodafone lost one percent to about one hundred and twenty four pence. GSK slipped zero point eight percent to roughly one thousand eight hundred and ninety one pence. Barclays eased zero point eight percent and Lloyds was down half a percent. Rio Tinto gave back zero point four percent, and Unilever was a touch lower. Closer to home, the ASX two hundred opens at ten o'clock Eastern time, with local futures pointing to a flat to slightly positive start. At half past eleven, the Bureau of Statistics releases quarterly job vacancies, watched for signs of a cooling labour market. Miners stay in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. In New Zealand, the monthly trade balance lands at a quarter to nine, before the NZX opens. This briefing is AI-generated general information only. It is not financial advice.",
+  "script": "Good morning, it's Thursday 24 September. Here's your pre-open briefing. Wall Street had a softer session. The S&P 500 fell about seven tenths of a percent and the Nasdaq Composite about one point one percent. The biggest mover on our watchlist was Alphabet, down three point eight percent. There was no clear news behind that move, though one report noted the company's DeepMind chief said Gemini four is coming much earlier. Amazon was next, down two point two percent, and again there was nothing in the headlines that clearly explains the fall. Elsewhere the tone was mixed rather than uniformly weak. The big chipmakers drifted lower, the largest bank on the list eased, and the oil major and one social media name finished higher. Trading volumes were broadly ordinary, with a little more activity than usual in a couple of the megacap technology names. In London, the market was close to flat. The FTSE 100 slipped about one tenth of a percent, so the weakness seen in New York did not really carry through. The standout was BP, up two point nine percent. There was no clear news behind that move. Shell followed, up one point nine percent, after completing an eight hundred and forty million dollar sale of Gulf oil assets. Away from energy the mood was mildly negative. AstraZeneca gave back some ground, the big banks drifted lower, and the telecoms and consumer names were a touch weaker. There was no volume data available for the London names, so it is hard to say how much conviction sat behind any of these moves. Looking at Oceania today. The ASX two hundred opens at ten, with local futures pointing to a flat to slightly positive start. Australian job vacancies data lands at half past eleven, the quarterly release from the Bureau of Statistics, watched for signs of a cooling labour market. Miners are in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. In New Zealand, the monthly trade balance is due at a quarter to nine, before the NZX opens. This briefing is AI-generated general information only. It is not financial advice.",
   "audio_url": "/briefing.mp3",
-  "generated_at": "2026-09-24T06:35:16+00:00",
+  "generated_at": "2026-09-24T06:53:22+00:00",
   "source": "scraper"
 }

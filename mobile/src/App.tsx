@@ -206,7 +206,7 @@ function App() {
       <header className="masthead">
         <div className="brand">Before the Bell</div>
         <h1>{formatDate(briefing.date)}</h1>
-        <p className="subtitle">Overnight markets in three minutes, ready for the ASX open.</p>
+        <p className="subtitle">Overnight markets in under three minutes, ready for the ASX open.</p>
       </header>
 
       <Player briefing={briefing} />

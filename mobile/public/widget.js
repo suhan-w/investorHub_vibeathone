@@ -52,6 +52,12 @@ function marketColumn(parent, label, session, count) {
   const col = parent.addStack();
   col.layoutVertically();
   addText(col, label, 11, C.faint, "semibold");
+  for (const idx of session.indexes || []) {
+    const row = col.addStack();
+    addText(row, idx.name, 11, C.soft);
+    row.addSpacer(4);
+    addText(row, pct(idx.pct_change), 11, idx.pct_change >= 0 ? C.up : C.down, "bold");
+  }
   col.addSpacer(2);
   addText(col, session.headline, 12, C.ink, "semibold", 2);
   col.addSpacer(6);
@@ -78,7 +84,7 @@ function playPill(parent, briefing) {
   icon.imageSize = new Size(10, 10);
   icon.tintColor = C.bg;
   pill.addSpacer(5);
-  addText(pill, briefing.audio_url ? "Play 3 min brief" : "Read brief", 11, C.bg, "bold");
+  addText(pill, briefing.audio_url ? "Play morning brief" : "Read brief", 11, C.bg, "bold");
 }
 
 async function buildWidget() {
@@ -119,7 +125,7 @@ async function buildWidget() {
   }
 
   // Overnight: New York and London side by side
-  const rows = family === "large" ? 6 : 2;
+  const rows = family === "large" ? 5 : 2;
   const markets = w.addStack();
   marketColumn(markets, "NEW YORK", new_york, rows);
   markets.addSpacer(14);
