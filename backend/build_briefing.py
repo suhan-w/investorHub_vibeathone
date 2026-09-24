@@ -3,6 +3,7 @@
     python build_briefing.py            # script + audio
     python build_briefing.py --no-audio # script only, saves ElevenLabs credits
     python build_briefing.py --sample   # use sample_data.py instead of live scraping
+    python build_briefing.py --date 2026-09-24  # label the brief for a given morning
 
 Writes mobile/public/briefing.json and mobile/public/briefing.mp3,
 which the phone app reads.
@@ -34,7 +35,8 @@ def main() -> None:
     skip_audio = "--no-audio" in sys.argv
 
     print(f"[build] fetching market data from {SOURCE}")
-    market = get_market_data()
+    for_date = sys.argv[sys.argv.index("--date") + 1] if "--date" in sys.argv else None
+    market = get_market_data(for_date) if for_date else get_market_data()
     oceania = json.loads((HERE / "oceania_events.json").read_text())
 
     print("[build] writing widget text and script")

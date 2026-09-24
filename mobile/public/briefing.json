@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-25",
+  "date": "2026-09-24",
   "sessions": {
     "new_york": {
-      "headline": "Tech and banks slip, Microsoft and Tesla edge higher",
+      "headline": "Mixed watchlist as Nvidia and Apple drift lower",
       "bullets": [
-        "Nvidia fell 1.47 percent to 225.51 US dollars on below-average volume.",
-        "Apple down 0.8 percent; JPMorgan Chase off 0.73 percent at 337.53 dollars.",
-        "Microsoft rose 0.52 percent to 500.59 dollars; Tesla up 0.32 percent."
+        "Nvidia down 1.47% to about US$225.51 on 0.7x average volume.",
+        "Apple off 0.8%; JPMorgan Chase down 0.73% on 1.1x volume.",
+        "Microsoft up 0.52% past US$500; Tesla up 0.32%."
       ],
       "movers": [
         {
@@ -32,32 +32,32 @@
       ]
     },
     "london": {
-      "headline": "Vodafone and HSBC drag, defensives firm in London",
+      "headline": "BP leads gains, AstraZeneca and Vodafone slip",
       "bullets": [
-        "Vodafone fell 2.15 percent to 125.15 pence on 1.4 times average volume.",
-        "HSBC down 1.59 percent at 1509.4 pence; BP barely changed.",
-        "AstraZeneca up 0.89 percent on unusual volume; Unilever gained 1.2 percent."
+        "BP up 2.86% to 557.8 pence, the session's standout mover.",
+        "AstraZeneca down 1.52%; Trixeo approved for asthma in the EU.",
+        "Vodafone off 1.0%, HSBC up 0.66%, Unilever down 0.31%."
       ],
       "movers": [
         {
-          "ticker": "VOD.L",
-          "name": "Vodafone",
-          "pct_change": -2.15
-        },
-        {
-          "ticker": "HSBA.L",
-          "name": "HSBC",
-          "pct_change": -1.59
-        },
-        {
-          "ticker": "ULVR.L",
-          "name": "Unilever",
-          "pct_change": 1.2
+          "ticker": "BP.L",
+          "name": "BP",
+          "pct_change": 2.86
         },
         {
           "ticker": "AZN.L",
           "name": "AstraZeneca",
-          "pct_change": 0.89
+          "pct_change": -1.52
+        },
+        {
+          "ticker": "VOD.L",
+          "name": "Vodafone",
+          "pct_change": -1.0
+        },
+        {
+          "ticker": "HSBA.L",
+          "name": "HSBC",
+          "pct_change": 0.66
         }
       ]
     },
@@ -87,8 +87,8 @@
       ]
     }
   },
-  "script": "Good morning, and welcome to your market briefing for Friday 25 September. We start in New York, where our watchlist leaned lower. Nvidia was the weakest name, down one point four seven percent to about two hundred and twenty six US dollars, and it did that on lighter than usual turnover, around zero point seven times average volume. Apple eased zero point eight percent to about three hundred and thirty seven dollars. Meta has put Apple in its sights with new virtual reality glasses, according to one report on the day. JPMorgan Chase slipped zero point seven three percent, also near three hundred and thirty seven dollars, with volume a touch above average. Chief executive Jamie Dimon said artificial intelligence spending could reach a trillion dollars in twenty twenty seven. On the other side, Microsoft added zero point five two percent to just over five hundred dollars, and Tesla rose zero point three two percent to about three hundred and eighty dollars. So, a mixed and fairly quiet session overall. Now to London. The tone there was also uneven. Vodafone was the standout decliner, down two point one five percent to about one hundred and twenty five pence, on one point four times its average volume. HSBC fell one point five nine percent to roughly fifteen hundred and nine pence, and the bank was reported to be targeting younger workers with an entry level hiring drive. BP was essentially flat, down zero point one one percent near five hundred and forty two pence, on light turnover. The gainers came from the defensive end. Unilever rose one point two percent to about forty seven hundred pence, with a McCormick food deal facing a United Kingdom competition review. AstraZeneca added zero point eight nine percent to around twelve thousand six hundred and seventy pence, on one and a half times average volume, which is unusual. Its Trixeo treatment secured approval for asthma in the European Union. Looking to our own region, the lead from offshore is a cautious one. The Australian market opens at ten o'clock Eastern time, with local futures pointing to a flat to slightly positive start. At half past eleven we get quarterly Australian job vacancies data from the statistics bureau, watched for signs of a cooling labour market. Miners are in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. Across the Tasman, the New Zealand trade balance lands at a quarter to nine, before the local market opens. This briefing is AI-generated general information only. It is not financial advice.",
+  "script": "Good morning, and welcome to your market briefing for Thursday 24 September. New York was mixed across our watchlist, with the heavier names drifting lower. Nvidia led the falls, down one point four seven percent to about two hundred and twenty six dollars, on volume around zero point seven times average. Apple slipped zero point eight percent to about three hundred and thirty seven dollars, also on lighter than usual turnover. One headline noted Meta putting Apple firmly in its sights with new virtual reality glasses. JPMorgan Chase eased zero point seven three percent to about three hundred and thirty eight dollars, with volume a touch above average. Chief executive Jamie Dimon said artificial intelligence spending could reach one trillion dollars in twenty twenty seven, and warned it could add a little to inflation. On the other side, Microsoft rose zero point five two percent to just over five hundred dollars. Tesla added zero point three two percent to about three hundred and eighty dollars, with a headline flagging a new Supercharger move. Now to London, where energy did the heavy lifting. BP climbed two point eight six percent to about five hundred and fifty eight pence, the standout gain on the watchlist. HSBC added zero point six six percent to roughly fifteen hundred and nineteen pence, with reports it is targeting younger workers through an entry level hiring drive. The falls were led by AstraZeneca, down one point five two percent to about twelve thousand four hundred and eighty pence, alongside news its Trixeo treatment secured approval for asthma in the European Union. Vodafone fell one percent to about one hundred and twenty four pence. Market chatter suggested its OXG earnings were hit by the Drahi stake sale. Unilever was the mildest mover, easing zero point three one percent to roughly four thousand six hundred and eighty four pence, as a McCormick food deal faces a United Kingdom competition review. No volume data was available for the London names today. Closer to home, the ASX two hundred opens at ten o'clock, with local futures pointing to a flat to slightly positive start. At half past eleven we get quarterly Australian job vacancies data from the Bureau of Statistics, watched for signs of a cooling labour market. Miners stay in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. In New Zealand, the monthly trade balance lands at a quarter to nine, before the NZX opens. This briefing is AI-generated general information only. It is not financial advice.",
   "audio_url": "/briefing.mp3",
-  "generated_at": "2026-09-24T06:21:08+00:00",
+  "generated_at": "2026-09-24T06:31:18+00:00",
   "source": "scraper"
 }

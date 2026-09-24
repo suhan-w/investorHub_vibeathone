@@ -29,9 +29,9 @@ def briefing_date() -> str:
     return d.isoformat()
 
 
-def get_market_data() -> dict:
+def get_market_data(for_date: str | None = None) -> dict:
     names = {w["ticker"]: w.get("name", w["ticker"]) for w in load_watchlist()}
-    records = get_all_ticker_data(skip_summary=True)
+    records = get_all_ticker_data(force_refresh=True, skip_summary=True)
 
     sessions = {}
     for key, exchanges in SESSIONS.items():
@@ -59,7 +59,7 @@ def get_market_data() -> dict:
             ],
         }
 
-    return {"date": briefing_date(), "sessions": sessions}
+    return {"date": for_date or briefing_date(), "sessions": sessions}
 
 
 if __name__ == "__main__":
