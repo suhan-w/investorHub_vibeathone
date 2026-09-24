@@ -2,8 +2,9 @@
 
     python build_briefing.py            # script + audio
     python build_briefing.py --no-audio # script only, saves ElevenLabs credits
+    python build_briefing.py --sample   # use sample_data.py instead of live scraping
 
-Writes frontend/public/briefing.json and frontend/public/briefing.mp3,
+Writes mobile/public/briefing.json and mobile/public/briefing.mp3,
 which the phone app reads.
 """
 
@@ -17,16 +18,16 @@ from dotenv import load_dotenv
 import podcast
 
 HERE = Path(__file__).parent
-PUBLIC = HERE.parent / "frontend" / "public"
+PUBLIC = HERE.parent / "mobile" / "public"
 
 load_dotenv(HERE / ".env")
 
-try:
-    from scraper import get_market_data  # teammate 1's real scraper
-    SOURCE = "scraper"
-except ImportError:
-    from sample_data import get_market_data  # stand-in until scraper.py lands
+if "--sample" in sys.argv:
+    from sample_data import get_market_data
     SOURCE = "sample"
+else:
+    from scraper import get_market_data  # teammate 1's live data layer
+    SOURCE = "scraper"
 
 
 def main() -> None:
@@ -36,8 +37,9 @@ def main() -> None:
     market = get_market_data()
     oceania = json.loads((HERE / "oceania_events.json").read_text())
 
-    print("[build] writing script")
-    script = podcast.write_script(market, oceania)
+    print("[build] writing widget text and script")
+    written = podcast.write_briefing(market, oceania)
+    script = written["script"]
     words = len(script.split())
     print(f"[build] script is {words} words (about {words / 150:.1f} min)")
 
@@ -51,7 +53,11 @@ def main() -> None:
 
     briefing = {
         "date": market["date"],
-        "sessions": {**market["sessions"], "oceania": oceania},
+        "sessions": {
+            key: {**written[key], "movers": market["sessions"][key]["movers"]}
+            for key in ("new_york", "london")
+        }
+        | {"oceania": oceania},
         "script": script,
         "audio_url": "/briefing.mp3" if mp3_path.exists() else None,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
