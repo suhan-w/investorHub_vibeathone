@@ -1,0 +1,407 @@
+[
+  {
+    "id": "sub-1",
+    "name": "Hannah Sato",
+    "email": "mia.pham0@example.com",
+    "emailOpens": 5,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-24"
+  },
+  {
+    "id": "sub-2",
+    "name": "Daniel Sato",
+    "email": "lucas.osei1@example.com",
+    "emailOpens": 6,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 1,
+    "lastActiveDate": "2026-09-16"
+  },
+  {
+    "id": "sub-3",
+    "name": "Alexander Sato",
+    "email": "sophie.pham2@example.com",
+    "emailOpens": 3,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-10"
+  },
+  {
+    "id": "sub-4",
+    "name": "Leo Everett",
+    "email": "liam.hargreaves3@example.com",
+    "emailOpens": 5,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-15"
+  },
+  {
+    "id": "sub-5",
+    "name": "Emily Sundqvist",
+    "email": "alexander.kowalski4@example.com",
+    "emailOpens": 6,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-22"
+  },
+  {
+    "id": "sub-6",
+    "name": "Noah Sundqvist",
+    "email": "william.carmichael5@example.com",
+    "emailOpens": 2,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-09"
+  },
+  {
+    "id": "sub-7",
+    "name": "Charlotte Carmichael",
+    "email": "samuel.sato6@example.com",
+    "emailOpens": 6,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 2,
+    "lastActiveDate": "2026-09-16"
+  },
+  {
+    "id": "sub-8",
+    "name": "Sophie Bianchi",
+    "email": "ethan.beaumont7@example.com",
+    "emailOpens": 5,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-19"
+  },
+  {
+    "id": "sub-9",
+    "name": "Henry Delacroix",
+    "email": "oscar.nguyen8@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-27"
+  },
+  {
+    "id": "sub-10",
+    "name": "Grace Pham",
+    "email": "james.sato9@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-01"
+  },
+  {
+    "id": "sub-11",
+    "name": "Ruby Pham",
+    "email": "thomas.osei10@example.com",
+    "emailOpens": 4,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-21"
+  },
+  {
+    "id": "sub-12",
+    "name": "Noah Everett",
+    "email": "noah.larsen11@example.com",
+    "emailOpens": 5,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-23"
+  },
+  {
+    "id": "sub-13",
+    "name": "Charlotte Osei",
+    "email": "ruby.novak12@example.com",
+    "emailOpens": 4,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-02"
+  },
+  {
+    "id": "sub-14",
+    "name": "Sophie Delacroix",
+    "email": "lucas.delacroix13@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-17"
+  },
+  {
+    "id": "sub-15",
+    "name": "Alexander Nguyen",
+    "email": "james.larsen14@example.com",
+    "emailOpens": 6,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-18"
+  },
+  {
+    "id": "sub-16",
+    "name": "Leo Bianchi",
+    "email": "charlotte.marchetti15@example.com",
+    "emailOpens": 0,
+    "emailClicks": 0,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-23"
+  },
+  {
+    "id": "sub-17",
+    "name": "Ava Beaumont",
+    "email": "oscar.carmichael16@example.com",
+    "emailOpens": 6,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 3,
+    "lastActiveDate": "2026-09-20"
+  },
+  {
+    "id": "sub-18",
+    "name": "Grace Delacroix",
+    "email": "emily.bianchi17@example.com",
+    "emailOpens": 6,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-18"
+  },
+  {
+    "id": "sub-19",
+    "name": "Henry Sundqvist",
+    "email": "james.beaumont18@example.com",
+    "emailOpens": 4,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 1,
+    "lastActiveDate": "2026-09-17"
+  },
+  {
+    "id": "sub-20",
+    "name": "Grace Pham",
+    "email": "grace.carmichael19@example.com",
+    "emailOpens": 4,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-20"
+  },
+  {
+    "id": "sub-21",
+    "name": "Oscar Novak",
+    "email": "amelia.bianchi20@example.com",
+    "emailOpens": 3,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 2,
+    "lastActiveDate": "2026-07-29"
+  },
+  {
+    "id": "sub-22",
+    "name": "Oscar Kowalski",
+    "email": "ella.carmichael21@example.com",
+    "emailOpens": 6,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-17"
+  },
+  {
+    "id": "sub-23",
+    "name": "Thomas Osei",
+    "email": "chloe.sato22@example.com",
+    "emailOpens": 5,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-23"
+  },
+  {
+    "id": "sub-24",
+    "name": "Ruby Hargreaves",
+    "email": "ethan.whitfield23@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-20"
+  },
+  {
+    "id": "sub-25",
+    "name": "Isla Novak",
+    "email": "ruby.beaumont24@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-09"
+  },
+  {
+    "id": "sub-26",
+    "name": "Jack Whitfield",
+    "email": "liam.marchetti25@example.com",
+    "emailOpens": 2,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-31"
+  },
+  {
+    "id": "sub-27",
+    "name": "Sophie Beaumont",
+    "email": "mia.larsen26@example.com",
+    "emailOpens": 6,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-16"
+  },
+  {
+    "id": "sub-28",
+    "name": "Olivia Larsen",
+    "email": "lucas.pham27@example.com",
+    "emailOpens": 5,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 1,
+    "lastActiveDate": "2026-09-16"
+  },
+  {
+    "id": "sub-29",
+    "name": "Hannah Kowalski",
+    "email": "oscar.fitzgerald28@example.com",
+    "emailOpens": 3,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-07-29"
+  },
+  {
+    "id": "sub-30",
+    "name": "Charlotte Reyes",
+    "email": "henry.petrov29@example.com",
+    "emailOpens": 3,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-07"
+  },
+  {
+    "id": "sub-31",
+    "name": "Amelia Whitfield",
+    "email": "thomas.reyes30@example.com",
+    "emailOpens": 2,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-25"
+  },
+  {
+    "id": "sub-32",
+    "name": "Thomas Whitfield",
+    "email": "mia.everett31@example.com",
+    "emailOpens": 2,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-16"
+  },
+  {
+    "id": "sub-33",
+    "name": "Daniel Fitzgerald",
+    "email": "hannah.marchetti32@example.com",
+    "emailOpens": 1,
+    "emailClicks": 0,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-07-31"
+  },
+  {
+    "id": "sub-34",
+    "name": "Ethan Everett",
+    "email": "lily.carmichael33@example.com",
+    "emailOpens": 1,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-07-29"
+  },
+  {
+    "id": "sub-35",
+    "name": "James Sato",
+    "email": "ethan.pham34@example.com",
+    "emailOpens": 5,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 2,
+    "lastActiveDate": "2026-09-22"
+  },
+  {
+    "id": "sub-36",
+    "name": "Hannah Reyes",
+    "email": "max.fitzgerald35@example.com",
+    "emailOpens": 1,
+    "emailClicks": 0,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-08-02"
+  },
+  {
+    "id": "sub-37",
+    "name": "Alexander Reyes",
+    "email": "samuel.everett36@example.com",
+    "emailOpens": 4,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 3,
+    "lastActiveDate": "2026-09-19"
+  },
+  {
+    "id": "sub-38",
+    "name": "Jack Novak",
+    "email": "zoe.beaumont37@example.com",
+    "emailOpens": 5,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-23"
+  },
+  {
+    "id": "sub-39",
+    "name": "Daniel Delacroix",
+    "email": "olivia.okafor38@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 2,
+    "lastActiveDate": "2026-09-13"
+  },
+  {
+    "id": "sub-40",
+    "name": "Henry Fitzgerald",
+    "email": "max.whitfield39@example.com",
+    "emailOpens": 2,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-24"
+  },
+  {
+    "id": "sub-41",
+    "name": "Thomas Delacroix",
+    "email": "ava.everett40@example.com",
+    "emailOpens": 1,
+    "emailClicks": 0,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-08"
+  },
+  {
+    "id": "sub-42",
+    "name": "Noah Nguyen",
+    "email": "grace.petrov41@example.com",
+    "emailOpens": 3,
+    "emailClicks": 1,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-12"
+  },
+  {
+    "id": "sub-43",
+    "name": "Ava Bianchi",
+    "email": "isla.whitfield42@example.com",
+    "emailOpens": 6,
+    "emailClicks": 3,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-22"
+  },
+  {
+    "id": "sub-44",
+    "name": "Leo Carmichael",
+    "email": "thomas.whitfield43@example.com",
+    "emailOpens": 5,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 0,
+    "lastActiveDate": "2026-09-16"
+  },
+  {
+    "id": "sub-45",
+    "name": "Liam Sato",
+    "email": "emily.nguyen44@example.com",
+    "emailOpens": 4,
+    "emailClicks": 2,
+    "qaQuestionsAsked": 1,
+    "lastActiveDate": "2026-09-17"
+  }
+]
