@@ -2,47 +2,62 @@
   "date": "2026-09-24",
   "sessions": {
     "new_york": {
-      "headline": "Mixed watchlist as Nvidia and Apple drift lower",
+      "headline": "Tech watchlist slips as Alphabet and Amazon lead losses",
       "bullets": [
-        "Nvidia down 1.47% to about US$225.51 on 0.7x average volume.",
-        "Apple off 0.8%; JPMorgan Chase down 0.73% on 1.1x volume.",
-        "Microsoft up 0.52% past US$500; Tesla up 0.32%."
+        "Alphabet fell 3.8% to about US$337.83, volume 1.4 times average.",
+        "Amazon dropped 2.24%; Nvidia and AMD each eased 1.47%.",
+        "ExxonMobil rose 1.85%; Meta added 1.02% on unusual 1.6x volume."
       ],
       "movers": [
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet",
+          "pct_change": -3.8
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon",
+          "pct_change": -2.24
+        },
+        {
+          "ticker": "XOM",
+          "name": "ExxonMobil",
+          "pct_change": 1.85
+        },
         {
           "ticker": "NVDA",
           "name": "Nvidia",
           "pct_change": -1.47
         },
         {
-          "ticker": "AAPL",
-          "name": "Apple",
-          "pct_change": -0.8
+          "ticker": "AMD",
+          "name": "AMD",
+          "pct_change": -1.47
         },
         {
-          "ticker": "JPM",
-          "name": "JPMorgan Chase",
-          "pct_change": -0.73
-        },
-        {
-          "ticker": "MSFT",
-          "name": "Microsoft",
-          "pct_change": 0.52
+          "ticker": "META",
+          "name": "Meta",
+          "pct_change": 1.02
         }
       ]
     },
     "london": {
-      "headline": "BP leads gains, AstraZeneca and Vodafone slip",
+      "headline": "Energy names lead, banks and pharma drift lower",
       "bullets": [
-        "BP up 2.86% to 557.8 pence, the session's standout mover.",
-        "AstraZeneca down 1.52%; Trixeo approved for asthma in the EU.",
-        "Vodafone off 1.0%, HSBC up 0.66%, Unilever down 0.31%."
+        "BP rose 2.86% to 557.8p; Shell gained 1.85% to 3575p.",
+        "AstraZeneca fell 1.52% to 12,480p despite EU asthma approval for Trixeo.",
+        "Vodafone down 1%, GSK down 0.79%, Barclays down 0.76%."
       ],
       "movers": [
         {
           "ticker": "BP.L",
           "name": "BP",
           "pct_change": 2.86
+        },
+        {
+          "ticker": "SHEL.L",
+          "name": "Shell",
+          "pct_change": 1.85
         },
         {
           "ticker": "AZN.L",
@@ -55,9 +70,14 @@
           "pct_change": -1.0
         },
         {
-          "ticker": "HSBA.L",
-          "name": "HSBC",
-          "pct_change": 0.66
+          "ticker": "GSK.L",
+          "name": "GSK",
+          "pct_change": -0.79
+        },
+        {
+          "ticker": "BARC.L",
+          "name": "Barclays",
+          "pct_change": -0.76
         }
       ]
     },
@@ -87,8 +107,8 @@
       ]
     }
   },
-  "script": "Good morning, and welcome to your market briefing for Thursday 24 September. New York was mixed across our watchlist, with the heavier names drifting lower. Nvidia led the falls, down one point four seven percent to about two hundred and twenty six dollars, on volume around zero point seven times average. Apple slipped zero point eight percent to about three hundred and thirty seven dollars, also on lighter than usual turnover. One headline noted Meta putting Apple firmly in its sights with new virtual reality glasses. JPMorgan Chase eased zero point seven three percent to about three hundred and thirty eight dollars, with volume a touch above average. Chief executive Jamie Dimon said artificial intelligence spending could reach one trillion dollars in twenty twenty seven, and warned it could add a little to inflation. On the other side, Microsoft rose zero point five two percent to just over five hundred dollars. Tesla added zero point three two percent to about three hundred and eighty dollars, with a headline flagging a new Supercharger move. Now to London, where energy did the heavy lifting. BP climbed two point eight six percent to about five hundred and fifty eight pence, the standout gain on the watchlist. HSBC added zero point six six percent to roughly fifteen hundred and nineteen pence, with reports it is targeting younger workers through an entry level hiring drive. The falls were led by AstraZeneca, down one point five two percent to about twelve thousand four hundred and eighty pence, alongside news its Trixeo treatment secured approval for asthma in the European Union. Vodafone fell one percent to about one hundred and twenty four pence. Market chatter suggested its OXG earnings were hit by the Drahi stake sale. Unilever was the mildest mover, easing zero point three one percent to roughly four thousand six hundred and eighty four pence, as a McCormick food deal faces a United Kingdom competition review. No volume data was available for the London names today. Closer to home, the ASX two hundred opens at ten o'clock, with local futures pointing to a flat to slightly positive start. At half past eleven we get quarterly Australian job vacancies data from the Bureau of Statistics, watched for signs of a cooling labour market. Miners stay in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. In New Zealand, the monthly trade balance lands at a quarter to nine, before the NZX opens. This briefing is AI-generated general information only. It is not financial advice.",
+  "script": "Good morning. Here is your market briefing for Thursday 24 September. New York leaned lower across our watchlist. Alphabet was the weakest, down three point eight percent to about three hundred and thirty eight dollars, on volume around one point four times average. DeepMind's chief said Gemini four is coming much earlier. Amazon fell two point two four percent to roughly two hundred and forty nine dollars. Nvidia and AMD both eased about one point five percent, Nvidia near two hundred and twenty six dollars and AMD about six hundred and fifteen dollars. Apple slipped zero point eight percent, and JPMorgan Chase was down zero point seven percent. On the other side, ExxonMobil rose one point eight five percent to roughly one hundred and sixty one dollars. Meta gained one percent to about seven hundred and forty four dollars, with trading one point six times average, unusually heavy. Mark Zuckerberg said the Muse artificial intelligence agent will take a small fee from transactions. Microsoft added half a percent and Tesla was slightly higher. Across to London, where energy names led. BP climbed two point nine percent to about five hundred and fifty eight pence. Shell rose one point eight five percent to roughly three thousand five hundred and seventy five pence, after completing an eight hundred and forty million dollar Gulf oil asset sale. HSBC edged up zero point seven percent, as the bank targets younger workers with an entry level hiring drive. Elsewhere the tone was softer. AstraZeneca fell one point five percent to around twelve thousand four hundred and eighty pence, although its Trixeo treatment secured approval for asthma in the European Union. Vodafone lost one percent to about one hundred and twenty four pence. GSK slipped zero point eight percent to roughly one thousand eight hundred and ninety one pence. Barclays eased zero point eight percent and Lloyds was down half a percent. Rio Tinto gave back zero point four percent, and Unilever was a touch lower. Closer to home, the ASX two hundred opens at ten o'clock Eastern time, with local futures pointing to a flat to slightly positive start. At half past eleven, the Bureau of Statistics releases quarterly job vacancies, watched for signs of a cooling labour market. Miners stay in focus all day, with overnight iron ore and copper moves setting the tone for BHP, Rio Tinto and Fortescue. In New Zealand, the monthly trade balance lands at a quarter to nine, before the NZX opens. This briefing is AI-generated general information only. It is not financial advice.",
   "audio_url": "/briefing.mp3",
-  "generated_at": "2026-09-24T06:31:18+00:00",
+  "generated_at": "2026-09-24T06:35:16+00:00",
   "source": "scraper"
 }

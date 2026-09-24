@@ -31,10 +31,6 @@ function pct(v) {
   return `${v > 0 ? "+" : ""}${v.toFixed(1)}%`;
 }
 
-function topMover(session) {
-  return [...session.movers].sort((a, b) => Math.abs(b.pct_change) - Math.abs(a.pct_change))[0];
-}
-
 function dayLabel(iso) {
   const d = new Date(iso + "T00:00:00");
   const df = new DateFormatter();
@@ -52,19 +48,23 @@ function addText(stack, text, size, color, weight = "regular", lines = 1) {
   return t;
 }
 
-function marketColumn(parent, label, session) {
+function marketColumn(parent, label, session, count) {
   const col = parent.addStack();
   col.layoutVertically();
   addText(col, label, 11, C.faint, "semibold");
   col.addSpacer(2);
   addText(col, session.headline, 12, C.ink, "semibold", 2);
-  col.addSpacer(4);
-  const m = topMover(session);
-  if (m) {
+  col.addSpacer(6);
+  const movers = [...session.movers]
+    .sort((a, b) => Math.abs(b.pct_change) - Math.abs(a.pct_change))
+    .slice(0, count);
+  for (const m of movers) {
     const row = col.addStack();
-    addText(row, m.name, 11, C.soft);
-    row.addSpacer(4);
-    addText(row, pct(m.pct_change), 11, m.pct_change >= 0 ? C.up : C.down, "semibold");
+    row.centerAlignContent();
+    addText(row, m.name, 12, C.soft);
+    row.addSpacer();
+    addText(row, pct(m.pct_change), 12, m.pct_change >= 0 ? C.up : C.down, "semibold");
+    col.addSpacer(3);
   }
 }
 
@@ -119,10 +119,11 @@ async function buildWidget() {
   }
 
   // Overnight: New York and London side by side
+  const rows = family === "large" ? 6 : 2;
   const markets = w.addStack();
-  marketColumn(markets, "NEW YORK", new_york);
-  markets.addSpacer(12);
-  marketColumn(markets, "LONDON", london);
+  marketColumn(markets, "NEW YORK", new_york, rows);
+  markets.addSpacer(14);
+  marketColumn(markets, "LONDON", london, rows);
 
   w.addSpacer();
 
@@ -137,7 +138,7 @@ async function buildWidget() {
 
   if (family === "large") {
     w.addSpacer(8);
-    for (const e of oceania.events.slice(0, 4)) {
+    for (const e of oceania.events.slice(0, 3)) {
       const row = w.addStack();
       addText(row, e.time, 10, C.faint, "semibold");
       row.addSpacer(8);

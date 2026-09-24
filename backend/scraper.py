@@ -55,7 +55,7 @@ def get_market_data(for_date: str | None = None) -> dict:
             "stocks": stocks,
             "movers": [
                 {"ticker": s["ticker"], "name": s["name"], "pct_change": s["pct_change"]}
-                for s in movers[:4]
+                for s in movers[:6]
             ],
         }
 
