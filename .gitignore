@@ -8,6 +8,7 @@ frontend/dist
 backend/__pycache__
 backend/.venv
 *.pyc
+backend/scrapper/.data_layer_cache.json
 
 # env
 .env
